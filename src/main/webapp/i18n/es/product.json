@@ -1,0 +1,25 @@
+{
+  "posApp": {
+    "product": {
+      "home": {
+        "title": "Productos",
+        "createLabel": "Crear nuevo producto",
+        "createOrEditLabel": "Crear o editar producto",
+        "notFound": "Ningún producto encontrado"
+      },
+      "created": "Un nuevo Producto ha sido creado con el identificador {{ param }}",
+      "updated": "Un producto ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un producto ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar el producto {{ id }}?"
+      },
+      "detail": {
+        "title": "Producto"
+      },
+      "name": "Nombre",
+      "description": "Descripción",
+      "price": "Precio",
+      "image": "Imagen"
+    }
+  }
+}
