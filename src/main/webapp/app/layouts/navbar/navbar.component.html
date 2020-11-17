@@ -121,7 +121,7 @@
                     <span *ngIf="!getImageUrl()">
                         <fa-icon icon="user"></fa-icon>
                         <span *ngSwitchCase="true">
-                            {{ account.login }}
+                            {{ account?.login }}
                         </span>
                         <span *ngSwitchCase="false" jhiTranslate="global.menu.account.main">
                             Account

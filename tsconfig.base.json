@@ -3,11 +3,11 @@
     "target": "es6",
     "module": "esnext",
     "moduleResolution": "node",
-    "sourceMap": true,
+    "sourceMap": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strict": true,
-    "noImplicitReturns": true,
+    "strict": false,
+    "noImplicitReturns": false,
     "noFallthroughCasesInSwitch": true,
     "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
@@ -17,15 +17,15 @@
     "paths": {
       "app/*": ["src/main/webapp/app/*"]
     },
-    "importHelpers": true,
-    "downlevelIteration": true,
+    "importHelpers": false,
+    "downlevelIteration": false,
     "declaration": false,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": false
   },
   "angularCompilerOptions": {
-    "strictInjectionParameters": true,
-    "fullTemplateTypeCheck": true,
-    "strictTemplates": true,
-    "preserveWhitespaces": true
+    "strictInjectionParameters": false,
+    "fullTemplateTypeCheck": false,
+    "strictTemplates": false,
+    "preserveWhitespaces": false
   }
 }

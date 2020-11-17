@@ -1,1 +1,11 @@
-<p>sales works!</p>
+<div fxFlex="600px" fxFlex.xs="100" fxFlexOffset.xs="0" fxFlexOffset="calc(50% - 300px)" fxLayout="column" style="padding: 10px;">
+    <mat-form-field>
+        <input [formControl]="autoCompleteControl" type="text" placeholder="{{ 'posApp.product.detail.title' | translate }}" aria-label="Number" matInput [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let product of products | async; let index = index" [value]="product.name">
+                {{ product.name}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+    <mat-icon>search</mat-icon>
+</div>

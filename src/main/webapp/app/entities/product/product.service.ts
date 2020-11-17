@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared/util/request-util';
@@ -12,6 +13,7 @@ type EntityArrayResponseType = HttpResponse<IProduct[]>;
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   public resourceUrl = SERVER_API_URL + 'api/products';
+  public resourceNameContainingUrl = SERVER_API_URL + 'api/productsNameContaining';
 
   constructor(protected http: HttpClient) {}
 
@@ -30,6 +32,19 @@ export class ProductService {
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
     return this.http.get<IProduct[]>(this.resourceUrl, { params: options, observe: 'response' });
+  }
+
+  search(query: string): Observable<EntityArrayResponseType> {
+    return this.http
+      .get<IProduct[]>(this.resourceNameContainingUrl, {
+        observe: 'response',
+        params: { partName: query },
+      })
+      .pipe(
+        map(res => {
+          return res;
+        })
+      );
   }
 
   delete(id: number): Observable<HttpResponse<{}>> {

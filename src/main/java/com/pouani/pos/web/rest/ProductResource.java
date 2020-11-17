@@ -98,6 +98,19 @@ public class ProductResource {
     }
 
     /**
+     * {@code GET  /productsNameContaining} : get all the products containing part name.
+     *
+     * @param partName part name to find.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of products in body.
+     */
+    @GetMapping("/productsNameContaining")
+    public ResponseEntity<List<Product>> productsNameContaining(String partName) {
+        log.debug("REST request to get a page of Products");
+        List<Product> products = productService.findByNameContaining(partName);
+        return ResponseEntity.ok().body(products);
+    }
+
+    /**
      * {@code GET  /products/:id} : get the "id" product.
      *
      * @param id the id of the product to retrieve.
